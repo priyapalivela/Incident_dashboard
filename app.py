@@ -5,7 +5,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
-import torch
 from datetime import datetime
 
 # Create sample incident data
@@ -615,6 +614,8 @@ def close_modal(n_clicks, is_open):
         return not is_open
     return is_open
 
-# Run the app
+# Modify the last part of your code to:
 if __name__ == '__main__':
-    app.run(debug=False)
+    import os
+    port = int(os.environ.get('PORT', 8050))
+    app.run_server(host='0.0.0.0', port=port)
